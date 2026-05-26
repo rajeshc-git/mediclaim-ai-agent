@@ -1,4 +1,4 @@
-# 🏥 Mediclaim AI: Offline Health Insurance Claim Auditing & Compliance Agent
+# 🏥 Mediclaim AI Agent
 
 Mediclaim AI is a production-grade, offline-first health insurance claim auditing and compliance system. Built on a modular **ReAct (Reason + Act)** orchestration loop, the agent dynamically reconciles medical bills, evaluates patient records against complex policy guidelines, and generates boardroom-ready Excel audit sheets.
 
