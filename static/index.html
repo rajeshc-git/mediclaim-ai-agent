@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 Autonomous Medical Insurance Claim AI Agent </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Outfit:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Retro CRT Scanline overlay for that premium TV monitor touch -->
+    <div class="crt-overlay"></div>
+
+    <div class="app-container">
+
+        <!-- Header HUD -->
+        <header class="app-header">
+            <div class="logo-area">
+                <span class="logo-icon">📡</span>
+                <div class="logo-text">
+                    <h1>AGENT CONSOLE</h1>
+                    <p>REAL-TIME MEDICAL INSURANCE AUDIT | POWERED BY ABI-HEALTH</p>
+                </div>
+            </div>
+            <div class="hud-global-status">
+                <div class="status-pulse-container">
+                    <span class="status-pulse idle" id="global-pulse"></span>
+                    <span id="global-status-text">SYSTEM STANDBY</span>
+                </div>
+                <div class="status-divider"></div>
+                <div class="system-time" id="system-clock">00:00:00</div>
+                <div class="status-divider"></div>
+                <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle light/dark theme"
+                    aria-label="Toggle light/dark theme">
+                    <span class="theme-toggle-icon" id="theme-toggle-icon">☀️</span>
+                    <span id="theme-toggle-label">LIGHT</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="main-layout">
+
+            <!-- Left Sidebar Telemetry -->
+            <div class="mobile-sidebar-wrapper">
+                <aside class="sidebar-hud" id="sidebar-hud">
+                    <div class="hud-panel border-glow">
+                        <div class="panel-header">
+                            <h2>SYSTEM TELEMETRY</h2>
+                            <span class="panel-line"></span>
+                        </div>
+
+                        <div class="telemetry-grid">
+                            <div class="telemetry-card">
+                                <span class="tel-label">LLM BRAIN</span>
+                                <span class="tel-val glow-blue" id="hud-provider">MOCK</span>
+                            </div>
+                            <div class="telemetry-card">
+                                <span class="tel-label">ACTIVE MODEL</span>
+                                <span class="tel-val glow-cyan" id="hud-model">SANDBOX</span>
+                            </div>
+                            <div class="telemetry-card">
+                                <span class="tel-label">RUNNING MODE</span>
+                                <span class="tel-val glow-orange" id="hud-mode">MOCK MODE</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hud-panel border-glow">
+                        <div class="panel-header">
+                            <h2>CONTEXT MEMORY</h2>
+                            <span class="panel-line"></span>
+                        </div>
+                        <div class="memory-meter-container">
+                            <div class="meter-info">
+                                <span>Short-Term Buffer</span>
+                                <span id="memory-counter">0 / 40 msgs</span>
+                            </div>
+                            <div class="meter-bar-bg">
+                                <div class="meter-bar-fill" id="memory-meter" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hud-panel border-glow">
+                        <div class="panel-header">
+                            <h2>CAPABILITY TOOLSET</h2>
+                            <span class="panel-line"></span>
+                        </div>
+                        <div class="tools-chip-container" id="tools-container">
+                            <span class="tool-chip">read_file</span>
+                            <span class="tool-chip">write_file</span>
+                            <span class="tool-chip">list_directory</span>
+                            <span class="tool-chip">web_search</span>
+                        </div>
+                    </div>
+
+                    <div class="hud-panel border-glow">
+                        <div class="panel-header">
+                            <h2>DOCUMENT INGEST DEPOT</h2>
+                            <span class="panel-line"></span>
+                        </div>
+                        <div class="ingest-container">
+                            <select id="ingest-category" class="ingest-select">
+                                <option value="patient">📁 Patient Records</option>
+                                <option value="policy">📜 Insurance Policies</option>
+                            </select>
+                            <div id="drop-zone" class="drop-zone">
+                                <span class="drop-icon">📤</span>
+                                <p class="drop-text">Drag & Drop files or click to scan</p>
+                                <input type="file" id="file-input" multiple style="display: none;">
+                            </div>
+                            <div id="upload-status" class="upload-status">READY FOR DATA PACKETS</div>
+                        </div>
+                    </div>
+                </aside>
+
+
+
+                <!-- Mobile-only scroll indicator dots -->
+                <div class="sidebar-dots" id="sidebar-dots" aria-hidden="true">
+                    <span class="sidebar-dot active" data-panel="0"></span>
+                    <span class="sidebar-dot" data-panel="1"></span>
+                    <span class="sidebar-dot" data-panel="2"></span>
+                    <span class="sidebar-dot" data-panel="3"></span>
+                </div>
+            </div>
+
+            <!-- Central TV Terminal Screen -->
+            <main class="terminal-container border-glow-green">
+                <div class="terminal-header">
+                    <div class="terminal-title">
+                        <span class="live-blink">●</span>
+                        <h2>MONITOR FEED // LOG STREAM</h2>
+                    </div>
+                    <div class="terminal-controls">
+                        <button class="control-btn" id="clear-feed-btn" title="Clear log stream">CLEAR FEED</button>
+                    </div>
+                </div>
+
+                <div class="terminal-screen" id="log-screen">
+
+                    <!-- Welcome Telemetry Boot Message -->
+                    <div class="terminal-card welcome-card">
+                        <div class="card-tag system-tag">SYSTEM BOOT</div>
+                        <p class="boot-text">Initializing autonomous ai agent..</p>
+                        <p class="boot-subtext">Waiting for user command submission to deploy workspace tools...</p>
+                    </div>
+
+                </div>
+            </main>
+
+        </div>
+
+        <!-- Prompt Console Footer -->
+        <footer class="console-footer border-glow">
+            <form class="console-form" id="prompt-form">
+                <span class="prompt-arrow">➔</span>
+                <input type="text" id="prompt-input" autocomplete="off"
+                    placeholder="Input task parameters (e.g. Audit the bills of Mr. Sarvana Kumar)...">
+                <button type="submit" class="submit-btn" id="send-btn">
+                    <span class="btn-glow"></span>
+                    <span class="btn-text">ASK AGENT</span>
+                </button>
+            </form>
+            <div class="footer-telemetry">
+                <span>COMM CHANNEL: SECURE CHANNEL</span>
+                <span>STATUS: <span id="footer-status-details">AWAITING CONNECTION</span></span>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

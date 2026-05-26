@@ -1,0 +1,17 @@
+# Python Bytecode Caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local environment variables and keys
+.env
+
+# Testing & claims audit outputs
+claims_audit/claim_TEST*.json
+tests/test_workspace/
+
+# Editor & System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

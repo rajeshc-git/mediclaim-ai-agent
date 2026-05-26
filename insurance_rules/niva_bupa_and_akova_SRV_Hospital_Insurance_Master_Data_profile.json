@@ -1,0 +1,16 @@
+{
+  "company_name": "Niva Bupa",
+  "policy_tier": "Normal",
+  "deductible_inr": 0.0,
+  "room_rent_capping": "Not specified",
+  "icu_capping": "Not specified",
+  "copay_percentage": 0.0,
+  "waiting_period_months": 0,
+  "specialty_limits": {
+    "cardiac_care": 0.9,
+    "outpatient": 1.0,
+    "emergency": 0.9,
+    "dental": 1.0,
+    "general_consultation": 1.0
+  }
+}

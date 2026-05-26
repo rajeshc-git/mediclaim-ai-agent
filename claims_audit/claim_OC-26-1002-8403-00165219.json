@@ -1,0 +1,66 @@
+{
+  "claim_id": "OC-26-1002-8403-00165219",
+  "patient_name": "SHANKARAN MOOPANAR",
+  "total_gross_charge_inr": 140111,
+  "insurance_reimbursement_inr": 131851,
+  "patient_copay_responsibility_inr": 8260,
+  "audit_status": "AUDITED",
+  "multi_policy_audits": [
+    {
+      "company_name": "Niva Bupa/Akaova",
+      "policy_tier": "Normal",
+      "approved_coverage": 131851.0,
+      "patient_copay": 8260.0,
+      "probability": 75,
+      "risk_category": "MODERATE RISK",
+      "verdict": "CONDITIONAL",
+      "deductions": [
+        "Clinical Coding Mismatch (-15%)",
+        "Missing Diagnostic Proof (-10%)"
+      ],
+      "justification": "Claim approved with deductions due to coding mismatch and lack of diagnostic proof."
+    },
+    {
+      "company_name": "Aditya Birla",
+      "policy_tier": "Normal",
+      "approved_coverage": 131851.0,
+      "patient_copay": 8260.0,
+      "probability": 75,
+      "risk_category": "MODERATE RISK",
+      "verdict": "CONDITIONAL",
+      "deductions": [
+        "Clinical Coding Mismatch (-15%)",
+        "Missing Diagnostic Proof (-10%)"
+      ],
+      "justification": "Claim approved with deductions due to coding mismatch and lack of diagnostic proof."
+    },
+    {
+      "company_name": "Niva Bupa",
+      "policy_tier": "Normal",
+      "approved_coverage": 131851.0,
+      "patient_copay": 8260.0,
+      "probability": 75,
+      "risk_category": "MODERATE RISK",
+      "verdict": "CONDITIONAL",
+      "deductions": [
+        "Clinical Coding Mismatch (-15%)",
+        "Missing Diagnostic Proof (-10%)"
+      ],
+      "justification": "Claim approved with deductions due to coding mismatch and lack of diagnostic proof."
+    },
+    {
+      "company_name": "Bajaj Allianz",
+      "policy_tier": "Normal",
+      "approved_coverage": 131851.0,
+      "patient_copay": 8260.0,
+      "probability": 75,
+      "risk_category": "MODERATE RISK",
+      "verdict": "CONDITIONAL",
+      "deductions": [
+        "Clinical Coding Mismatch (-15%)",
+        "Missing Diagnostic Proof (-10%)"
+      ],
+      "justification": "Claim approved with deductions due to coding mismatch and lack of diagnostic proof."
+    }
+  ]
+}

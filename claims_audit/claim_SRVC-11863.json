@@ -1,0 +1,21 @@
+{
+  "claim_id": "SRVC-11863",
+  "patient_name": "MRS. MANGAL SANJAY GAVANDE",
+  "total_gross_charge_inr": 106650.0,
+  "insurance_reimbursement_inr": 106650.0,
+  "patient_copay_responsibility_inr": 0.0,
+  "audit_status": "AUDITED",
+  "multi_policy_audits": [
+    {
+      "company_name": "Audited Insurer",
+      "policy_tier": "Normal",
+      "approved_coverage": 106650.0,
+      "patient_copay": 0.0,
+      "probability": 85,
+      "risk_category": "LOW RISK",
+      "verdict": "APPROVED",
+      "deductions": [],
+      "justification": "Claim approved at 100% coverage rate after active policy rules evaluation."
+    }
+  ]
+}
