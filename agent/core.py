@@ -217,7 +217,7 @@ class AgentOrchestrator:
                     "Final Answer: your complete response\n\n"
                     "Please retry with the correct format now."
                 )
-                yield {"type": "tool_error", "tool": "format_parser", "error": "Response missing Action/Final Answer tags. Retrying..."}
+                yield {"type": "thought", "text": "⚠️ [System Notification] Response was missing required 'Action:' or 'Final Answer:' prefix. Nudging the agent to retry with correct formatting..."}
                 self.memory.add_observation("format_parser", guidance)
 
         # If loop exhausts max iterations

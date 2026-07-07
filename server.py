@@ -67,6 +67,19 @@ async def upload_files(category: str = Form(...), files: List[UploadFile] = File
     if category not in ("patient", "policy"):
         raise HTTPException(status_code=400, detail="Invalid target category. Must be 'patient' or 'policy'.")
         
+    if category == "patient":
+        # Clear claims_audit directory on new patient upload to prevent model hallucination with leftover reports
+        audit_dir = "claims_audit"
+        if os.path.exists(audit_dir) and os.path.isdir(audit_dir):
+            try:
+                for f in os.listdir(audit_dir):
+                    f_path = os.path.join(audit_dir, f)
+                    if os.path.isfile(f_path):
+                        os.remove(f_path)
+                logger.info("Cleared claims_audit directory on new patient file upload.")
+            except Exception as clean_err:
+                logger.error(f"Failed to clear claims_audit: {str(clean_err)}")
+                
     target_dir = "patient_records" if category == "patient" else "insurance_rules"
     abs_target_dir = os.path.abspath(target_dir)
     

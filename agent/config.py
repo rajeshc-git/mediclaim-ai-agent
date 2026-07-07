@@ -19,20 +19,20 @@ class Config:
     """
     Standard configurations for the AI Agent.
     """
-    LLM_PROVIDER: str = os.getenv("LLM_PROVIDER", "gemini").lower().strip()
+    LLM_PROVIDER: str = os.getenv("LLM_PROVIDER", "").lower().strip()
     
     # Gemini configurations
     GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "").strip()
-    AGENT_MODEL: str = os.getenv("AGENT_MODEL", "gemini-2.5-flash").strip()
+    AGENT_MODEL: str = os.getenv("AGENT_MODEL", "").strip()
     
     # OpenAI configurations
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "").strip()
-    OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4o").strip()
+    OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "").strip()
     
     # Ollama configurations
     OLLAMA_HOST: str = os.getenv("OLLAMA_HOST", "http://localhost:11434").strip()
-    OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "llama3").strip()
-    OLLAMA_NUM_CTX: int = int(os.getenv("OLLAMA_NUM_CTX", "32768").strip())
+    OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "").strip()
+    OLLAMA_NUM_CTX: int = int(os.getenv("OLLAMA_NUM_CTX", "").strip())
     
     LOG_LEVEL: str = log_level_str
 

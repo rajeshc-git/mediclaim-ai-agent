@@ -39,6 +39,17 @@ def main():
         
     print_banner()
     
+    # Clear claims_audit directory on startup in CLI mode to avoid model hallucinating with leftover analysis reports
+    audit_dir = "claims_audit"
+    if os.path.exists(audit_dir) and os.path.isdir(audit_dir):
+        try:
+            for f in os.listdir(audit_dir):
+                f_path = os.path.join(audit_dir, f)
+                if os.path.isfile(f_path):
+                    os.remove(f_path)
+        except Exception:
+            pass
+            
     # Initialize the core agent
     try:
         orchestrator = AgentOrchestrator()

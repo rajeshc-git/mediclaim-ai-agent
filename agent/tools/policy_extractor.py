@@ -69,7 +69,7 @@ def extract_policy_profile(pdf_path: str) -> Dict[str, Any]:
         f"    \"general_consultation\": 1.0\n"
         f"  }}\n"
         f"}}\n\n"
-        f"Raw PDF Text:\n{raw_text[:25000]}"
+        f"Raw PDF Text:\n{raw_text[:50000]}"
     )
     
     try:
@@ -192,7 +192,7 @@ def extract_policy_profile_from_excel(xlsx_path: str) -> Dict[str, Any]:
         f"    \"general_consultation\": 1.0\n"
         f"  }}\n"
         f"}}\n\n"
-        f"Raw Excel Text:\n{raw_text[:25000]}"
+        f"Raw Excel Text:\n{raw_text[:50000]}"
     )
     
     try:

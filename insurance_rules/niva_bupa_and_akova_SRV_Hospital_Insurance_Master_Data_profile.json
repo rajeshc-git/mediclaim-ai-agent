@@ -1,15 +1,15 @@
 {
-  "company_name": "Niva Bupa",
+  "company_name": "NIVA BUPA",
   "policy_tier": "Normal",
   "deductible_inr": 0.0,
-  "room_rent_capping": "Not specified",
-  "icu_capping": "Not specified",
+  "room_rent_capping": "Rates vary based on room type (e.g., General Ward: \u20b91,800/day)",
+  "icu_capping": "Rates vary based on ICU level (e.g., ICU: \u20b96,500/day)",
   "copay_percentage": 0.0,
   "waiting_period_months": 0,
   "specialty_limits": {
-    "cardiac_care": 0.9,
+    "cardiac_care": 1.0,
     "outpatient": 1.0,
-    "emergency": 0.9,
+    "emergency": 1.0,
     "dental": 1.0,
     "general_consultation": 1.0
   }

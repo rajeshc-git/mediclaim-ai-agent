@@ -1,5 +1,5 @@
 {
-  "company_name": "SRV HOSPITAL CHEMBUR",
+  "company_name": "SRV Hospital Chembur",
   "policy_tier": "Normal",
   "deductible_inr": 0.0,
   "room_rent_capping": "Not specified",
@@ -8,9 +8,9 @@
   "waiting_period_months": 0,
   "specialty_limits": {
     "cardiac_care": 1.0,
-    "outpatient": 1.0,
-    "emergency": 1.0,
-    "dental": 1.0,
+    "outpatient": 0.9,
+    "emergency": 0.95,
+    "dental": 0.8,
     "general_consultation": 1.0
   }
 }

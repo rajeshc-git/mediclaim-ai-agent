@@ -153,9 +153,18 @@ class TestMedicalTools(unittest.TestCase):
         self.assertIn("Bajaj Allianz", wb.sheetnames)
 
     def test_list_directory_recursive(self):
+        # Create a claims_audit directory in the test workspace
+        claims_audit_dir = os.path.join(self.test_dir, "claims_audit")
+        os.makedirs(claims_audit_dir, exist_ok=True)
+        dummy_audit_file = os.path.join(claims_audit_dir, "claim_TEST_IGNORE.json")
+        with open(dummy_audit_file, "w", encoding="utf-8") as f:
+            f.write("{}")
+            
         res = list_directory_recursive(self.test_dir)
         self.assertIn("john_doe", res)
         self.assertIn("clinical_notes.txt", res)
+        self.assertNotIn("claims_audit", res)
+        self.assertNotIn("claim_TEST_IGNORE.json", res)
 
     def test_read_pdf_not_found(self):
         res = read_pdf("nonexistent.pdf")

@@ -1,16 +1,16 @@
 {
-  "company_name": "N/A",
+  "company_name": "SRV HOSPITAL \u2014 ADITYA BIRLA",
   "policy_tier": "Normal",
   "deductible_inr": 0.0,
-  "room_rent_capping": "Not specified",
-  "icu_capping": "Not specified",
+  "room_rent_capping": "Daily rates vary based on room category (e.g., Economy \u20b91800/day, Suite \u20b99000/day)",
+  "icu_capping": "Daily rate for ICU is \u20b98000",
   "copay_percentage": 0.0,
   "waiting_period_months": 0,
   "specialty_limits": {
     "cardiac_care": 1.0,
-    "outpatient": 1.0,
-    "emergency": 1.0,
-    "dental": 1.0,
+    "outpatient": 0.9,
+    "emergency": 0.95,
+    "dental": 0.8,
     "general_consultation": 1.0
   }
 }

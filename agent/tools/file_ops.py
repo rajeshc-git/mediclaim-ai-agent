@@ -18,12 +18,12 @@ def resolve_smart_path(input_path: str) -> str:
     # Search recursively in the current working directory
     workspace_root = os.getcwd()
     for root, dirs, files in os.walk(workspace_root):
-        # Skip system, git, python env, and temporary testing directories to ensure safety and speed
+        # Skip system, git, python env, temporary testing, and output audit directories to ensure safety and speed
         dirs[:] = [
             d for d in dirs
             if d not in (
                 ".git", ".pytest_cache", ".vscode", "node_modules", 
-                "__pycache__", "venv", ".venv", "test_workspace"
+                "__pycache__", "venv", ".venv", "test_workspace", "claims_audit"
             )
         ]
         
@@ -109,6 +109,9 @@ def list_directory(directory_path: str = ".") -> str:
         files_list = []
         
         for item in items:
+            # Skip system, temp, and output audit folders when listing directories to avoid model confusion
+            if item in (".git", ".pytest_cache", ".vscode", "node_modules", "__pycache__", "venv", ".venv", "test_workspace", "claims_audit"):
+                continue
             item_path = os.path.join(safe_path, item)
             mtime = os.path.getmtime(item_path)
             mtime_str = datetime.datetime.fromtimestamp(mtime).strftime('%Y-%m-%d %H:%M:%S')
@@ -186,6 +189,14 @@ def list_directory_recursive(directory_path: str = ".") -> str:
     try:
         all_items = []
         for root, dirs, files in os.walk(safe_path):
+            # Skip system, git, python env, temporary testing, and output audit directories to prevent model confusion/hallucination
+            dirs[:] = [
+                d for d in dirs
+                if d not in (
+                    ".git", ".pytest_cache", ".vscode", "node_modules", 
+                    "__pycache__", "venv", ".venv", "test_workspace", "claims_audit"
+                )
+            ]
             for file in files:
                 file_path = os.path.join(root, file)
                 size = os.path.getsize(file_path)
