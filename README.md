@@ -1,5 +1,23 @@
 # 🏥 Mediclaim AI Agent
 
+<p align="center">
+  <a href="https://github.com/rajeshc-git/mediclaim-ai-agent/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/rajeshc-git/mediclaim-ai-agent?style=for-the-badge&logo=github&color=32CD32" alt="Contributors" />
+  </a>
+  <a href="https://github.com/rajeshc-git/mediclaim-ai-agent/network/members">
+    <img src="https://img.shields.io/github/forks/rajeshc-git/mediclaim-ai-agent?style=for-the-badge&logo=git&color=008080" alt="Forks" />
+  </a>
+  <a href="https://github.com/rajeshc-git/mediclaim-ai-agent/stargazers">
+    <img src="https://img.shields.io/github/stars/rajeshc-git/mediclaim-ai-agent?style=for-the-badge&logo=github&color=FFD700" alt="Stars" />
+  </a>
+  <a href="https://github.com/rajeshc-git/mediclaim-ai-agent/issues">
+    <img src="https://img.shields.io/github/issues/rajeshc-git/mediclaim-ai-agent?style=for-the-badge&logo=github&color=FF4500" alt="Issues" />
+  </a>
+  <a href="https://github.com/rajeshc-git/mediclaim-ai-agent/pulls">
+    <img src="https://img.shields.io/github/issues-pr/rajeshc-git/mediclaim-ai-agent?style=for-the-badge&logo=git&color=1E90FF" alt="Pull Requests" />
+  </a>
+</p>
+
 Mediclaim AI is a production-grade, offline-first health insurance claim auditing and compliance system. Built on a modular **ReAct (Reason + Act)** orchestration loop, the agent dynamically reconciles medical bills, evaluates patient records against complex policy guidelines, and generates boardroom-ready Excel audit sheets.
 
 The system is designed for high security and **100% offline local execution** via local LLM engines (like **Ollama**), with intelligent fallback to connected APIs (**Google Gemini** & **OpenAI**) or a robust **Mock Sandbox** mode when offline.
@@ -188,3 +206,26 @@ graph TD
 ```
 
 For more in-depth engineering specs, check [docs/architecture.md](docs/architecture.md).
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions of all kinds! Whether you are writing code, fixing bugs, updating documentation, or proposing new features, your help makes Mediclaim AI better.
+
+### How to Contribute:
+1. **Fork the Repository** to your own account.
+2. **Clone the Fork** to your local machine.
+3. **Create a Feature Branch** (`git checkout -b feature/cool-new-feature`).
+4. **Commit Your Changes** (`git commit -m 'Add cool new feature'`).
+5. **Push to Your Branch** (`git push origin feature/cool-new-feature`).
+6. **Open a Pull Request** against the `main` branch.
+
+<p align="center">
+  <a href="https://github.com/rajeshc-git/mediclaim-ai-agent/graphs/contributors">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge&logo=github" alt="PRs Welcome" />
+  </a>
+  <a href="https://github.com/rajeshc-git/mediclaim-ai-agent/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge&logo=opensourceinitiative" alt="MIT License" />
+  </a>
+</p>
