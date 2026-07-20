@@ -32,7 +32,8 @@ class Config:
     # Ollama configurations
     OLLAMA_HOST: str = os.getenv("OLLAMA_HOST", "http://localhost:11434").strip()
     OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "").strip()
-    OLLAMA_NUM_CTX: int = int(os.getenv("OLLAMA_NUM_CTX", "").strip())
+    _num_ctx_str = os.getenv("OLLAMA_NUM_CTX", "").strip()
+    OLLAMA_NUM_CTX: int = int(_num_ctx_str) if _num_ctx_str.isdigit() else 32768
     
     LOG_LEVEL: str = log_level_str
 

@@ -86,58 +86,99 @@ Autonomous_Agent2/
 
 ## ⚙️ Configuration & Environment Setup
 
-Configure the agent's behavior by creating a `.env` file in the root directory. Copy the structure from `.env.template`:
+The agent's behavior is controlled by environment variables. Configure them by creating a `.env` file in the project root.
 
+### Create `.env` from template:
+Choose the command for your operating system:
+* **Windows (PowerShell):**
+  ```powershell
+  Copy-Item .env.template .env
+  ```
+* **Windows (Command Prompt):**
+  ```cmd
+  copy .env.template .env
+  ```
+* **Linux / macOS:**
+  ```bash
+  cp .env.template .env
+  ```
+
+### `.env` File Parameters:
 ```env
-# Active LLM Provider: "ollama" (fully offline), "gemini" (online), or "openai" (online)
+# Active LLM Brain Provider: "ollama" (fully offline), "gemini" (online), or "openai" (online)
 LLM_PROVIDER=ollama
 
-# Ollama Local Configuration (Offline)
+# Ollama Local Configuration (Offline Mode)
 OLLAMA_HOST=http://localhost:11434
 OLLAMA_MODEL=gemma4:latest
 OLLAMA_NUM_CTX=32768
 
-# Gemini API Configuration (Online)
+# Gemini API Configuration (Online Mode)
 GEMINI_API_KEY=your_gemini_api_key_here
 AGENT_MODEL=gemini-2.5-flash
 
-# OpenAI API Configuration (Online)
+# OpenAI API Configuration (Online Mode)
 OPENAI_API_KEY=your_openai_api_key_here
 OPENAI_MODEL=gpt-4o-mini
 
-# Agent Settings
+# Agent Logging Settings
 LOG_LEVEL=INFO
 ```
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start & Setup Guide
 
 ### 1. Prerequisites
-Ensure you have Python 3.10+ installed. If running in **fully offline mode**, download and install [Ollama](https://ollama.com/) locally.
+* Python 3.10+ installed.
+* [Ollama](https://ollama.com/) (Required only if running in **fully offline mode**).
 
 ### 2. Install Dependencies
+Install all package dependencies (including `openpyxl`, `pypdf`, `fastapi`, etc.):
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Start Local LLM (For Offline Mode)
-Pull the desired model using your local Ollama console:
-```bash
-ollama pull gemma4:latest
-```
-Ensure the Ollama server is running (defaults to `http://localhost:11434`).
+### 3. Choose your LLM Brain Mode
+Configure your `.env` according to one of these modes:
 
-### 4. Run the FastAPI Server & Dashboard
+* **Mode A: Mock Sandbox (No Setup / Zero-Dependency)**
+  * Leave `GEMINI_API_KEY` or `OPENAI_API_KEY` empty (or keep `LLM_PROVIDER` unset).
+  * The agent will automatically fallback to the local **Mock Sandbox mode** mimicking ReAct thinking steps. Ideal for testing UI and file operations without API costs or local model downloads.
+  
+* **Mode B: Google Gemini API (Recommended Online)**
+  * Set `LLM_PROVIDER=gemini`
+  * Add your API key in `GEMINI_API_KEY`
+
+* **Mode C: Local Ollama (Fully Offline)**
+  * Install & run Ollama locally.
+  * Pull the model:
+    ```bash
+    ollama pull gemma4:latest
+    ```
+  * Set `LLM_PROVIDER=ollama` and `OLLAMA_MODEL=gemma4:latest`
+
+* **Mode D: OpenAI API (Alternative Online)**
+  * Set `LLM_PROVIDER=openai`
+  * Add your API key in `OPENAI_API_KEY`
+
+### 4. Run the Web Dashboard HUD
+Launch the FastAPI streaming server:
 ```bash
 python server.py
 ```
-This launches the server at `http://localhost:8000`. Open your browser and navigate to the page to interact with the **stunning web HUD**.
+Open your web browser and navigate to **`http://localhost:8000`** to experience the futuristic streaming HUD.
 
-### 5. Run the Interactive CLI (Alternative)
-For a terminal-based ReAct log console with full color logs, run:
+### 5. Run the Interactive CLI (Terminal Alternative)
+For a terminal-based interface with live color-coded reasoning logs:
 ```bash
 python run.py
+```
+
+### 6. Verify with Test Suite
+Run the test suite to verify the claims audit logic, policy parsing, and mathematical compliance formulas:
+```bash
+python -m pytest
 ```
 
 ---
